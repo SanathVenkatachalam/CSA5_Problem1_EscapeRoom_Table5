@@ -74,7 +74,7 @@ public class EscapeRoom
         game.movePlayer(0,-50);
       }else if(command.equals("left")){
         game.movePlayer(-50,0);
-    ` }
+      }
 
       /* TODO: get all the commands working */
       /* Your code here */
