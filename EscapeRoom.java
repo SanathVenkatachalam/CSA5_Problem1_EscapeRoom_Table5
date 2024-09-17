@@ -56,6 +56,7 @@ public class EscapeRoom
     
     int score = 0;
     int coincount = 0;
+    int coinsleft = game.getC
 
 
     Scanner in = new Scanner(System.in);
