@@ -55,8 +55,6 @@ public class EscapeRoom
     int py = 0; 
     
     int score = 0;
-    int coincount = 0;
-    int coinsleft = game.getC
 
 
     Scanner in = new Scanner(System.in);
@@ -145,6 +143,7 @@ public class EscapeRoom
         case "q":
           break;
       }
+    }
 
     score += game.endGame();
 
