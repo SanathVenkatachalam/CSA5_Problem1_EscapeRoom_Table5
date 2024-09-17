@@ -61,41 +61,63 @@ public class EscapeRoom
     String[] validCommands = { "right", "left", "up", "down", "r", "l", "u", "d",
     "jump", "jr", "jumpleft", "jl", "jumpup", "ju", "jumpdown", "jd",
     "pickup", "p", "quit", "q", "replay", "help", "?"};
-  
+    int length = validCommands.length;
+
     // set up game
     boolean play = true;
     while (play){
-
-      /* TODO: get all the commands working */
-      /* Your code here */
+      
       score = 0;
       System.out.println("Commands for the game type: ? ");
       System.out.print("Enter command: ");
       String command = in.nextLine().toLowerCase();
-      if(command.equals("right") || command.equals("r")){
-        game.movePlayer(m,0);
-      }else if(command.equals("down") || command.equals("d")){
-        game.movePlayer(0,m);
-      }else if(command.equals("up") || command.equals("u")){
-        game.movePlayer(0,-m);
-      }else if(command.equals("left") || command.equals("l")){
-        game.movePlayer(-m,0);
-      }else if(command.equals("jump") || command.equals("j")){
-        game.movePlayer(m*2,0);
-      }else if(command.equals("help") || command.equals("?")){
-        int length = validCommands.length;
+      switch(command){
+        case "right":
+          game.movePlayer(m,0);
+          break;
+        case "r":
+          game.movePlayer(m,0);
+          break;
+        case "left":
+          game.movePlayer(-m,0);
+          break;
+        case "l":
+          game.movePlayer(-m,0);
+          break;
+        case "up":
+          game.movePlayer(0,-m);
+          break;
+        case "u":
+          game.movePlayer(0,-m);
+          break;
+        case "down":
+          game.movePlayer(0,m);
+          break;
+        case "d":
+          game.movePlayer(0,m);
+          break;
+        case "pickup":
+          score +=1;
+          game.pickupPrize();
+          break;
+        case "p":
+          score +=1;
+          game.pickupPrize();
+          break;
+        case "?":
+          for (int i = 0; i < length; i++){
+            System.out.println(validCommands[i]);
+          }
+        case "help":
         for (int i = 0; i < length; i++){
           System.out.println(validCommands[i]);
         }
+        case "quit":
+          break;
+        case "q":
+          break;
       }
       
-      if (command.equals("pickup")){
-        score+=1;
-      }
-      if (command.equals("quit")){
-        break;
-      }
-
     }
 
   
@@ -106,5 +128,3 @@ public class EscapeRoom
     System.out.println("steps=" + game.getSteps());
   }
 }
-
-        
