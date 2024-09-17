@@ -56,6 +56,7 @@ public class EscapeRoom
     
     int score = 0;
 
+
     Scanner in = new Scanner(System.in);
     String[] validCommands = { "right", "left", "up", "down", "r", "l", "u", "d",
     "jump", "jr", "jumpleft", "jl", "jumpup", "ju", "jumpdown", "jd",
@@ -67,25 +68,32 @@ public class EscapeRoom
 
       /* TODO: get all the commands working */
       /* Your code here */
-
-      System.out.println("Enter command: ");
+      score = 0;
+      System.out.print("Enter command: ");
       System.out.println("Commands for the game type: ? ");
       String command = in.nextLine().toLowerCase();
       if(command.equals("right") || command.equals("r")){
-        game.movePlayer(50,0);
+        game.movePlayer(m,0);
       }else if(command.equals("down") || command.equals("d")){
-        game.movePlayer(0,50);
+        game.movePlayer(0,m);
       }else if(command.equals("up") || command.equals("u")){
-        game.movePlayer(0,-50);
+        game.movePlayer(0,-m);
       }else if(command.equals("left") || command.equals("l")){
-        game.movePlayer(-50,0);
+        game.movePlayer(-m,0);
+      }else if(command.equals("jump") || command.equals("j")){
+        game.movePlayer(m*2,0);
       }else if(command.equals("help") || command.equals("?")){
         int length = validCommands.length;
         for (int i = 0; i < length; i++){
           System.out.println(validCommands[i]);
-        }
       }
-
+      
+      if (command.equals("pickup")){
+        score+=1;
+      }
+      if (command.equals("quit")){
+        break;
+      }
 
     }
 
