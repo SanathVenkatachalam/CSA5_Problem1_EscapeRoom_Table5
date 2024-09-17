@@ -65,6 +65,7 @@ public class EscapeRoom
     // set up game
     boolean play = true;
     while (play){
+      score = 0;
       System.out.print("Enter command: ");
       String command = in.nextLine().toLowerCase();
       if(command.equals("right") || command.equals("r")){
@@ -78,16 +79,18 @@ public class EscapeRoom
       }else if(command.equals("jump") || command.equals("j")){
         game.movePlayer(m*2,0);
       }
-      System.out.println("Hello");
+      
 
       /* TODO: get all the commands working */
       /* Your code here */
-
-
-      if(command.equals("pickup")){
-        coin = null;
-        score++;
+      if (command.equals("pickup")){
+        score+=1;
       }
+      if (command.equals("quit")){
+        break;
+      }
+
+
     }
 
   
