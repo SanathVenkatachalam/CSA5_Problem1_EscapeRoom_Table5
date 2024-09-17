@@ -69,8 +69,8 @@ public class EscapeRoom
       /* TODO: get all the commands working */
       /* Your code here */
       score = 0;
-      System.out.print("Enter command: ");
       System.out.println("Commands for the game type: ? ");
+      System.out.print("Enter command: ");
       String command = in.nextLine().toLowerCase();
       if(command.equals("right") || command.equals("r")){
         game.movePlayer(m,0);
