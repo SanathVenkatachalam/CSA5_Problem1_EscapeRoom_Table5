@@ -55,6 +55,7 @@ public class EscapeRoom
     int py = 0; 
     
     int score = 0;
+    int coincount = 0;
 
 
     Scanner in = new Scanner(System.in);
@@ -68,6 +69,7 @@ public class EscapeRoom
     while (play){
       
       score = 0;
+
       System.out.println("Commands for the game type: ? ");
       System.out.print("Enter command: ");
       String command = in.nextLine().toLowerCase();
@@ -96,9 +98,34 @@ public class EscapeRoom
         case "d":
           game.movePlayer(0,m);
           break;
+        case "jumpleft":
+          game.movePlayer(-m*2,0);
+          break;
+        case "jl":
+          game.movePlayer(-m*2,0);
+          break;
+        case "jumpright":
+          game.movePlayer(m*2,0);
+          break;
+        case "jr":
+          game.movePlayer(m*2,0);
+          break;
+        case "jumpup":
+          game.movePlayer(0,-m*2);
+          break;
+        case "ju":
+          game.movePlayer(0,-m*2);
+          break;
+        case "jumpdown":
+          game.movePlayer(0,m*2);
+          break;
+        case "jd":
+          game.movePlayer(0,m*2);
+          break;
         case "pickup":
           score +=1;
           game.pickupPrize();
+          coincount+=1;
           break;
         case "p":
           score +=1;
@@ -117,10 +144,6 @@ public class EscapeRoom
         case "q":
           break;
       }
-      
-    }
-
-  
 
     score += game.endGame();
 
