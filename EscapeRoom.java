@@ -75,9 +75,11 @@ public class EscapeRoom
       }else if(command.equals("left")){
         game.movePlayer(-50,0);
       }
+      System.out.println("Hello");
 
       /* TODO: get all the commands working */
       /* Your code here */
+      // Hi
       
 
 
