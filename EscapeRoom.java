@@ -56,6 +56,7 @@ public class EscapeRoom
     
     int score = 0;
 
+
     Scanner in = new Scanner(System.in);
     String[] validCommands = { "right", "left", "up", "down", "r", "l", "u", "d",
     "jump", "jr", "jumpleft", "jl", "jumpup", "ju", "jumpdown", "jd",
@@ -66,23 +67,25 @@ public class EscapeRoom
     while (play){
       System.out.print("Enter command: ");
       String command = in.nextLine().toLowerCase();
-      if(command.equals("right")){
-        game.movePlayer(50,0);
-      }else if(command.equals("down")){
-        game.movePlayer(0,50);
-      }else if(command.equals("up")){
-        game.movePlayer(0,-50);
-      }else if(command.equals("left")){
-        game.movePlayer(-50,0);
+      if(command.equals("right") || command.equals("r")){
+        game.movePlayer(m,0);
+      }else if(command.equals("down") || command.equals("d")){
+        game.movePlayer(0,m);
+      }else if(command.equals("up") || command.equals("u")){
+        game.movePlayer(0,-m);
+      }else if(command.equals("left") || command.equals("l")){
+        game.movePlayer(-m,0);
+      }else if(command.equals("jump") || command.equals("j")){
+        game.movePlayer(m*2,0);
       }
 
       /* TODO: get all the commands working */
       /* Your code here */
-      
 
-
-    
-      
+      if(command.equals("pickup")){
+        coin = null;
+        score++;
+      }
     }
 
   
