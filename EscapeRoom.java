@@ -124,7 +124,6 @@ public class EscapeRoom
         case "pickup":
           score +=1;
           game.pickupPrize();
-          coincount+=1;
           break;
         case "p":
           score +=1;
@@ -149,5 +148,6 @@ public class EscapeRoom
 
     System.out.println("score=" + score);
     System.out.println("steps=" + game.getSteps());
+  }
   }
 }
