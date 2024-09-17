@@ -68,27 +68,47 @@ public class EscapeRoom
       score = 0;
       System.out.print("Enter command: ");
       String command = in.nextLine().toLowerCase();
-      if(command.equals("right") || command.equals("r")){
-        game.movePlayer(m,0);
-      }else if(command.equals("down") || command.equals("d")){
-        game.movePlayer(0,m);
-      }else if(command.equals("up") || command.equals("u")){
-        game.movePlayer(0,-m);
-      }else if(command.equals("left") || command.equals("l")){
-        game.movePlayer(-m,0);
-      }else if(command.equals("jump") || command.equals("j")){
-        game.movePlayer(m*2,0);
+      switch(command){
+        case "right":
+          game.movePlayer(m,0);
+          break;
+        case "r":
+          game.movePlayer(m,0);
+          break;
+        case "left":
+          game.movePlayer(-m,0);
+          break;
+        case "l":
+          game.movePlayer(-m,0);
+          break;
+        case "up":
+          game.movePlayer(0,-m);
+          break;
+        case "u":
+          game.movePlayer(0,-m);
+          break;
+        case "down":
+          game.movePlayer(0,m);
+          break;
+        case "d":
+          game.movePlayer(0,m);
+          break;
+        case "pickup":
+          score +=1;
+          game.pickupPrize();
+          break;
+        case "p":
+          score +=1;
+          game.pickupPrize();
+          break;
+        case "quit":
+          break;
+        case "q":
+          break;
       }
-      
-
       /* TODO: get all the commands working */
       /* Your code here */
-      if (command.equals("pickup")){
-        score+=1;
-      }
-      if (command.equals("quit")){
-        break;
-      }
+      
 
 
     }
