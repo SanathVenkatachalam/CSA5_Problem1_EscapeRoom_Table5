@@ -78,9 +78,11 @@ public class EscapeRoom
       }else if(command.equals("jump") || command.equals("j")){
         game.movePlayer(m*2,0);
       }
+      System.out.println("Hello");
 
       /* TODO: get all the commands working */
       /* Your code here */
+
 
       if(command.equals("pickup")){
         coin = null;
