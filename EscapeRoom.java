@@ -70,7 +70,6 @@ public class EscapeRoom
       /* Your code here */
       score = 0;
       System.out.print("Enter command: ");
-      System.out.println("Commands for the game type: ? ");
       String command = in.nextLine().toLowerCase();
       switch(command){
         case "right":
@@ -96,6 +95,30 @@ public class EscapeRoom
           break;
         case "d":
           game.movePlayer(0,m);
+          break;
+        case "jumpleft":
+          game.movePlayer(-m*2,0);
+          break;
+        case "jl":
+          game.movePlayer(-m*2,0);
+          break;
+        case "jumpright":
+          game.movePlayer(m*2,0);
+          break;
+        case "jr":
+          game.movePlayer(m*2,0);
+          break;
+        case "jumpup":
+          game.movePlayer(0,-m*2);
+          break;
+        case "ju":
+          game.movePlayer(0,-m*2);
+          break;
+        case "jumpdown":
+          game.movePlayer(0,m*2);
+          break;
+        case "jd":
+          game.movePlayer(0,m*2);
           break;
         case "pickup":
           score +=1;
