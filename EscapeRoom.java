@@ -65,8 +65,12 @@ public class EscapeRoom
     // set up game
     boolean play = true;
     while (play){
+
+      /* TODO: get all the commands working */
+      /* Your code here */
       score = 0;
       System.out.print("Enter command: ");
+      System.out.println("Commands for the game type: ? ");
       String command = in.nextLine().toLowerCase();
       switch(command){
         case "right":
@@ -109,7 +113,6 @@ public class EscapeRoom
       /* TODO: get all the commands working */
       /* Your code here */
       
-
 
     }
 
