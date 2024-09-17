@@ -86,6 +86,7 @@ public class EscapeRoom
         int length = validCommands.length;
         for (int i = 0; i < length; i++){
           System.out.println(validCommands[i]);
+        }
       }
       
       if (command.equals("pickup")){
