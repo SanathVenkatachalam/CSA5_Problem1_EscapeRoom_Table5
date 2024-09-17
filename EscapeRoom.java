@@ -56,6 +56,7 @@ public class EscapeRoom
     
     int score = 0;
     int coincount = 0;
+    int coinsleft = game.getC
 
 
     Scanner in = new Scanner(System.in);
@@ -135,10 +136,6 @@ public class EscapeRoom
           break;
         case "q":
           break;
-      }
-      switch(coincount){
-        case 3:
-          game.endGame();
       }
       
 
