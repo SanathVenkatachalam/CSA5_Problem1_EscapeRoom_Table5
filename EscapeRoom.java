@@ -65,8 +65,12 @@ public class EscapeRoom
     // set up game
     boolean play = true;
     while (play){
+
+      /* TODO: get all the commands working */
+      /* Your code here */
       score = 0;
       System.out.print("Enter command: ");
+      System.out.println("Commands for the game type: ? ");
       String command = in.nextLine().toLowerCase();
       if(command.equals("right") || command.equals("r")){
         game.movePlayer(m,0);
@@ -78,18 +82,18 @@ public class EscapeRoom
         game.movePlayer(-m,0);
       }else if(command.equals("jump") || command.equals("j")){
         game.movePlayer(m*2,0);
+      }else if(command.equals("help") || command.equals("?")){
+        int length = validCommands.length;
+        for (int i = 0; i < length; i++){
+          System.out.println(validCommands[i]);
       }
       
-
-      /* TODO: get all the commands working */
-      /* Your code here */
       if (command.equals("pickup")){
         score+=1;
       }
       if (command.equals("quit")){
         break;
       }
-
 
     }
 
