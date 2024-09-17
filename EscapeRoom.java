@@ -55,6 +55,7 @@ public class EscapeRoom
     int py = 0; 
     
     int score = 0;
+    int coincount = 0;
 
 
     Scanner in = new Scanner(System.in);
@@ -123,18 +124,22 @@ public class EscapeRoom
         case "pickup":
           score +=1;
           game.pickupPrize();
+          coincount+=1;
           break;
         case "p":
           score +=1;
           game.pickupPrize();
+          coincount+=1;
           break;
         case "quit":
           break;
         case "q":
           break;
       }
-      /* TODO: get all the commands working */
-      /* Your code here */
+      switch(coincount){
+        case 3:
+          game.endGame();
+      }
       
 
     }
