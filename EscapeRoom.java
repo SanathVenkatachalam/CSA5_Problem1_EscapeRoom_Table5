@@ -63,14 +63,15 @@ public class EscapeRoom
     String[] validCommands = { "right", "left", "up", "down", "r", "l", "u", "d",
     "jump", "jr", "jumpleft", "jl", "jumpup", "ju", "jumpdown", "jd",
     "pickup", "p", "quit", "q", "replay", "help", "?"};
-  
+    int length = validCommands.length;
+
     // set up game
     boolean play = true;
     while (play){
-
-      /* TODO: get all the commands working */
-      /* Your code here */
+      
       score = 0;
+
+      System.out.println("Commands for the game type: ? ");
       System.out.print("Enter command: ");
       String command = in.nextLine().toLowerCase();
       switch(command){
@@ -130,18 +131,20 @@ public class EscapeRoom
         case "p":
           score +=1;
           game.pickupPrize();
-          coincount+=1;
           break;
+        case "?":
+          for (int i = 0; i < length; i++){
+            System.out.println(validCommands[i]);
+          }
+        case "help":
+        for (int i = 0; i < length; i++){
+          System.out.println(validCommands[i]);
+        }
         case "quit":
           break;
         case "q":
           break;
       }
-      
-
-    }
-
-  
 
     score += game.endGame();
 
@@ -149,5 +152,3 @@ public class EscapeRoom
     System.out.println("steps=" + game.getSteps());
   }
 }
-
-        
