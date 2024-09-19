@@ -119,10 +119,10 @@ public class EscapeRoom
     name = in.nextLine();
     score += game.endGame();
     leaderboard.add(score);
-    for( int i =0; i <leaderboard.length(); i ++){
+    for( int i =0; i < leaderboard.size(); i ++){
       System.out.print(name + ": " + leaderboard.get(i));
     }
-    System.out.println("score=" + score);
+    System.out.println(" score=" + score);
     System.out.println("steps=" + game.getSteps());
   }
 
