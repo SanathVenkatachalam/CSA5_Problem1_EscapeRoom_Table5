@@ -32,7 +32,6 @@ public class EscapeRoom
   public static void main(String[] args) 
   {      
     // welcome message
-    ArrayList<Integer> leaderboard = new ArrayList<Integer>();
     String name;
     System.out.println("Welcome to EscapeRoom!");
     System.out.println("Get to the other side of the room, avoiding walls and invisible traps,");
@@ -57,6 +56,7 @@ public class EscapeRoom
     int length = validCommands.length;
     score = 0;
     // set up game
+    ArrayList<Integer> leaderboard = new ArrayList<Integer>();
     boolean play = true;
     while (play){
       
@@ -113,14 +113,18 @@ public class EscapeRoom
         case "q":
           play = false;
           break;
-      }
-    
+      } 
+    }
+    System.out.print("Enter name: ");
+    String name = in.nextLine();
+    score += game.endGame();
+    leaderboard.add(score);
+    for( int i =0; i <leaderboard.length(); i ++){
+      System.out.print(name + ": " + leaderboard.get(i));
+    }
+    System.out.println("score=" + score);
+    System.out.println("steps=" + game.getSteps());
   }
-  score += game.endGame();
-  leaderboard.add(score);
-  System.out.println("score=" + score);
-  System.out.println("steps=" + game.getSteps());
 
-  }
 }
 
