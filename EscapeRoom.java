@@ -124,13 +124,16 @@ public class EscapeRoom
           for (int i = 0; i < length; i++){
             System.out.println(validCommands[i]);
           }
+          break;
         case "help":
         for (int i = 0; i < length; i++){
           System.out.println(validCommands[i]);
         }
+        break;
         case "quit":
           
           play = false;
+        play = false;
           break;
         case "q":
           
@@ -140,8 +143,6 @@ public class EscapeRoom
           game.createBoard();
           break;
       }
-    }
-
     score += game.endGame();
     leaderboard.add(score);
     System.out.print("Enter name: ");
@@ -152,5 +153,10 @@ public class EscapeRoom
     }
     System.out.println("score=" + score);
     System.out.println("steps=" + game.getSteps());
+
+    for (String x : leaderboard){
+      System.out.println(name + " " + leaderboard)
+    }
+
   }
 }
