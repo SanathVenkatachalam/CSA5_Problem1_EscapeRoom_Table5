@@ -133,20 +133,24 @@ public class EscapeRoom
           for (int i = 0; i < length; i++){
             System.out.println(validCommands[i]);
           }
+          break;
         case "help":
         for (int i = 0; i < length; i++){
           System.out.println(validCommands[i]);
         }
+        break;
         case "quit":
+        play = false;
           break;
         case "q":
+        play = false;
           break;
       }
-
+    }
     score += game.endGame();
 
     System.out.println("score=" + score);
     System.out.println("steps=" + game.getSteps());
-  }
+  
   }
 }
