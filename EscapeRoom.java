@@ -6,7 +6,7 @@
 * Copyright(c) 2019 PLTW to present. All rights reserved
 */
 import java.util.Scanner;
-
+import java.util.ArrayList;
 /**
  * Create an escape room game where the player must navigate
  * to the other side of the screen in the fewest steps, while
@@ -62,11 +62,13 @@ public class EscapeRoom
     "jump", "jr", "jumpleft", "jl", "jumpup", "ju", "jumpdown", "jd",
     "pickup", "p", "quit", "q", "replay", "help", "?"};
     int length = validCommands.length;
+    ArrayList<Integer> leaderboard = new ArrayList<Integer>();
 
     // set up game
     boolean play = true;
     while (play){
-      
+      System.out.print("Enter username: ");
+      String name = in.nextLine();
       score = 0;
 
       System.out.println("Commands for the game type: ? ");
@@ -145,9 +147,13 @@ public class EscapeRoom
     }
 
     score += game.endGame();
+    leaderboard.add(score);
+
 
     System.out.println("score=" + score);
     System.out.println("steps=" + game.getSteps());
-  }
+    for (String x : leaderboard){
+      System.out.println(name + " " + leaderboard)
+    }
   }
 }
