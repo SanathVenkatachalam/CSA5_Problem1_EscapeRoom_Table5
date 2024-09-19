@@ -55,9 +55,7 @@ public class EscapeRoom
     "jump", "jr", "jumpleft", "jl", "jumpup", "ju", "jumpdown", "jd",
     "pickup", "p", "quit", "q", "replay", "help", "?"};
     int length = validCommands.length;
-    System.out.print("Enter username: ");
-      String name = in.nextLine();
-      score = 0;
+    score = 0;
     // set up game
     boolean play = true;
     while (play){
@@ -122,27 +120,6 @@ public class EscapeRoom
   leaderboard.add(score);
   System.out.println("score=" + score);
   System.out.println("steps=" + game.getSteps());
-  for (Integer x : leaderboard){
-    System.out.println(name + " " + leaderboard);
-  }
-        case "replay":
-          game.createBoard();
-          break;
-      }
-    score += game.endGame();
-    leaderboard.add(score);
-    System.out.print("Enter name: ");
-    name = in.nextLine();
-    
-    for (int x = 0; x < leaderboard.size(); x++){
-      System.out.println(name + ": " + leaderboard.get(x));
-    }
-    System.out.println("score=" + score);
-    System.out.println("steps=" + game.getSteps());
-
-    for (String x : leaderboard){
-      System.out.println(name + " " + leaderboard)
-    }
 
   }
 }
