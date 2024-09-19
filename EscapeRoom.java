@@ -52,7 +52,7 @@ public class EscapeRoom
     Scanner in = new Scanner(System.in);
     String[] validCommands = { "right", "left", "up", "down", "r", "l", "u", "d",
     "jump", "jr", "jumpleft", "jl", "jumpup", "ju", "jumpdown", "jd",
-    "pickup", "p", "quit", "q", "replay", "help", "?"};
+    "pickup", "p", "quit", "q", "replay", "help", "?", "check", "c"};
     int length = validCommands.length;
     score = 0;
     // set up game
@@ -69,40 +69,52 @@ public class EscapeRoom
         case "right":
         case "r":
           game.movePlayer(m,0);
+          px = px +m;
           break;
         case "left":
         case "l":
           game.movePlayer(-m,0);
+          px= px -m;
           break;
         case "up":
         case "u":
           game.movePlayer(0,-m);
+          py = py - m;
           break;
         case "down":
         case "d":
           game.movePlayer(0,m);
+          py = py +m;
           break;
         case "jumpleft":
         case "jl":
           game.movePlayer(-m*2,0);
+          px = px -m*2;
           break;
         case "jumpright":
         case "jr":
           game.movePlayer(m*2,0);
+          px = px + m*2;
           break;
         case "jumpup":
         case "ju":
           game.movePlayer(0,-m*2);
+          py = py - m*2;
           break;
         case "jumpdown":
         case "jd":
           game.movePlayer(0,m*2);
+          py = py + m*2;
           break;
         case "pickup":
         case "p":
           score +=1;
           game.pickupPrize();
           break;
+        case "check":
+        case "c":
+        game.isTrap( px+60, py+60);
+        break;
         case "?":
         case "help":
         for (int i = 0; i < length; i++){

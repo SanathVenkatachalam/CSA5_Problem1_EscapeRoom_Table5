@@ -221,6 +221,7 @@ public class GameGUI extends JComponent
       }
     }
     // there is no trap where player wants to go
+    System.out.println("There is no trap");
     return false;
   }
 
