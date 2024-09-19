@@ -116,7 +116,7 @@ public class EscapeRoom
       } 
     }
     System.out.print("Enter name: ");
-    String name = in.nextLine();
+    name = in.nextLine();
     score += game.endGame();
     leaderboard.add(score);
     for( int i =0; i <leaderboard.length(); i ++){
