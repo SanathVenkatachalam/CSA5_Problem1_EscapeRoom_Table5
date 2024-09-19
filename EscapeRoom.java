@@ -69,78 +69,50 @@ public class EscapeRoom
       String command = in.nextLine().toLowerCase();
       switch(command){
         case "right":
-          game.movePlayer(m,0);
-          break;
         case "r":
           game.movePlayer(m,0);
           break;
         case "left":
-          game.movePlayer(-m,0);
-          break;
         case "l":
           game.movePlayer(-m,0);
           break;
         case "up":
-          game.movePlayer(0,-m);
-          break;
         case "u":
           game.movePlayer(0,-m);
           break;
         case "down":
-          game.movePlayer(0,m);
-          break;
         case "d":
           game.movePlayer(0,m);
           break;
         case "jumpleft":
-          game.movePlayer(-m*2,0);
-          break;
         case "jl":
           game.movePlayer(-m*2,0);
           break;
         case "jumpright":
-          game.movePlayer(m*2,0);
-          break;
         case "jr":
           game.movePlayer(m*2,0);
           break;
         case "jumpup":
-          game.movePlayer(0,-m*2);
-          break;
         case "ju":
           game.movePlayer(0,-m*2);
           break;
         case "jumpdown":
-          game.movePlayer(0,m*2);
-          break;
         case "jd":
           game.movePlayer(0,m*2);
           break;
         case "pickup":
-          score +=1;
-          game.pickupPrize();
-          break;
         case "p":
           score +=1;
           game.pickupPrize();
           break;
         case "?":
-          for (int i = 0; i < length; i++){
-            System.out.println(validCommands[i]);
-          }
-          break;
         case "help":
         for (int i = 0; i < length; i++){
           System.out.println(validCommands[i]);
         }
         break;
         case "quit":
-          
-          play = false;
-        play = false;
-          break;
         case "q":
-          
           play = false;
           break;
       }
