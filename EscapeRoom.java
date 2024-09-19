@@ -55,10 +55,14 @@ public class EscapeRoom
     "jump", "jr", "jumpleft", "jl", "jumpup", "ju", "jumpdown", "jd",
     "pickup", "p", "quit", "q", "replay", "help", "?"};
     int length = validCommands.length;
-
+    System.out.print("Enter username: ");
+      String name = in.nextLine();
+      score = 0;
     // set up game
     boolean play = true;
     while (play){
+      
+
       score = 0;
       System.out.println("Commands for the game type: ? ");
       System.out.print("Enter command: ");
@@ -139,6 +143,16 @@ public class EscapeRoom
           
           play = false;
           break;
+      }
+    
+  }
+  score += game.endGame();
+  leaderboard.add(score);
+  System.out.println("score=" + score);
+  System.out.println("steps=" + game.getSteps());
+  for (Integer x : leaderboard){
+    System.out.println(name + " " + leaderboard);
+  }
         case "replay":
           game.createBoard();
           break;
@@ -160,3 +174,4 @@ public class EscapeRoom
 
   }
 }
+
