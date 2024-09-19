@@ -28,19 +28,12 @@ public class EscapeRoom
       // Note that you must adjust the score with any method that returns a score
       // Optional: create a custom image for your player use the file player.png on disk
     
-      /**** provided code:
-      // set up the game
-      boolean play = true;
-      while (play)
-      {
-        // get user input and call game methods to play 
-        play = false;
-      }
-      */
 
   public static void main(String[] args) 
   {      
     // welcome message
+    ArrayList<Integer> leaderboard = new ArrayList<Integer>();
+    String name;
     System.out.println("Welcome to EscapeRoom!");
     System.out.println("Get to the other side of the room, avoiding walls and invisible traps,");
     System.out.println("pick up all the prizes.\n");
@@ -62,15 +55,11 @@ public class EscapeRoom
     "jump", "jr", "jumpleft", "jl", "jumpup", "ju", "jumpdown", "jd",
     "pickup", "p", "quit", "q", "replay", "help", "?"};
     int length = validCommands.length;
-    ArrayList<Integer> leaderboard = new ArrayList<Integer>();
 
     // set up game
     boolean play = true;
     while (play){
-      System.out.print("Enter username: ");
-      String name = in.nextLine();
       score = 0;
-
       System.out.println("Commands for the game type: ? ");
       System.out.print("Enter command: ");
       String command = in.nextLine().toLowerCase();
@@ -140,20 +129,28 @@ public class EscapeRoom
           System.out.println(validCommands[i]);
         }
         case "quit":
+          
+          play = false;
           break;
         case "q":
+          
+          play = false;
+          break;
+        case "replay":
+          game.createBoard();
           break;
       }
     }
 
     score += game.endGame();
     leaderboard.add(score);
-
-
+    System.out.print("Enter name: ");
+    name = in.nextLine();
+    
+    for (int x = 0; x < leaderboard.size(); x++){
+      System.out.println(name + ": " + leaderboard.get(x));
+    }
     System.out.println("score=" + score);
     System.out.println("steps=" + game.getSteps());
-    for (String x : leaderboard){
-      System.out.println(name + " " + leaderboard)
-    }
   }
 }
