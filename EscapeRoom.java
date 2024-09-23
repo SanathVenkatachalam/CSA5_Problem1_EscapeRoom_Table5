@@ -129,6 +129,9 @@ public class EscapeRoom
     }
     System.out.print("Enter name: ");
     name = in.nextLine();
+    if(name.equals("$%^") || name.equals("@#$")){
+      System.out.println("INVALID INPUT!");
+    }
     score += game.endGame();
     leaderboard.add(score);
     for( int i =0; i < leaderboard.size(); i ++){
