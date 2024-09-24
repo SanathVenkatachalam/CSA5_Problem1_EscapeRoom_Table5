@@ -12,6 +12,7 @@ import java.io.File;
 import javax.imageio.ImageIO;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * A Game board on which to place and move players.
@@ -81,8 +82,29 @@ public class GameGUI extends JComponent
     }
   
     // player image, student can customize this image by changing file on disk
+    String[] characters = { "default", "bat", "dog", "cat", "human"};
+    Scanner in = new Scanner(System.in);
+    System.out.print("Choose your character:");
+    String character = in.nextLine().toLowerCase();
+    switch(character){
+      case "default":
+        character = "player";
+        break;
+      case "dog":
+        character = "dog";
+        break;
+      case "cat":
+        character = "cat";
+        break;
+      case "bat":
+        character = "bat";
+        break;
+      case "human":
+        character = "human";
+        break;
+    }
     try {
-      player = ImageIO.read(new File("player.png"));      
+      player = ImageIO.read(new File(character+".png"));
     } catch (Exception e) {
      System.err.println("Could not open file player.png");
     }

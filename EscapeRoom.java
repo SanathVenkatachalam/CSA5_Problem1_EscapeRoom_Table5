@@ -49,6 +49,8 @@ public class EscapeRoom
     int score = 0;
 
 
+/* define Scanner, commands and scores*/
+/* set up scanner input, valid commands, and score varialbe */
     Scanner in = new Scanner(System.in);
     String[] validCommands = { "right", "left", "up", "down", "r", "l", "u", "d",
     "jump", "jr", "jumpleft", "jl", "jumpup", "ju", "jumpdown", "jd",
@@ -56,16 +58,16 @@ public class EscapeRoom
     int length = validCommands.length;
     score = 0;
     // set up game
+    /* leaderboard setup*/
     ArrayList<Integer> leaderboard = new ArrayList<Integer>();
     boolean play = true;
     while (play){
-      
-
       score = 0;
       System.out.println("Commands for the game type: ? ");
       System.out.print("Enter command: ");
       String command = in.nextLine().toLowerCase();
       switch(command){
+        //movement decided by switch statements the value m is 60 and determines how far the player moves
         case "right":
         case "r":
           game.movePlayer(m,0);
@@ -118,6 +120,7 @@ public class EscapeRoom
         case "spring":
         case "s":
         game.springTrap(0, 0);
+
         break;
         case "?":
         case "help":
@@ -125,14 +128,21 @@ public class EscapeRoom
           System.out.println(validCommands[i]);
         }
         break;
+        //quits the game
         case "quit":
         case "q":
           play = false;
           break;
       } 
     }
+    // asks user for name
     System.out.print("Enter name: ");
     name = in.nextLine();
+    // if name contains any arbritrary characters then it is invalid
+    if(name.equals("$%^") || name.equals("@#$")){
+      System.out.println("INVALID INPUT!");
+    }
+    // final score
     score += game.endGame();
     leaderboard.add(score);
     for( int i =0; i < leaderboard.size(); i ++){
