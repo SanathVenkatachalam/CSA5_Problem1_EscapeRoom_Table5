@@ -52,7 +52,7 @@ public class EscapeRoom
     Scanner in = new Scanner(System.in);
     String[] validCommands = { "right", "left", "up", "down", "r", "l", "u", "d",
     "jump", "jr", "jumpleft", "jl", "jumpup", "ju", "jumpdown", "jd",
-    "pickup", "p", "quit", "q", "replay", "help", "?", "check", "c"};
+    "pickup", "p", "quit", "q", "replay", "help", "?", "check", "c", "spring", "s"};
     int length = validCommands.length;
     score = 0;
     // set up game
@@ -113,7 +113,11 @@ public class EscapeRoom
           break;
         case "check":
         case "c":
-        game.isTrap( px+60, py+60);
+        game.isTrap( 0, 0);
+        break;
+        case "spring":
+        case "s":
+        game.springTrap(0, 0);
         break;
         case "?":
         case "help":
